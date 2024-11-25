@@ -1,10 +1,10 @@
-docker login
+docker login docker.io
 
-dotnet publish --self-contained
+dotnet publish
 
-Set-Location ./StoreApi
+cd ./StoreApi
 
 docker build --tag 'ursteveb/dotnetstoreapi:v8-latest' .
 docker push 'ursteveb/dotnetstoreapi:v8-latest'
 
-Set-Location ../
+cd ../
