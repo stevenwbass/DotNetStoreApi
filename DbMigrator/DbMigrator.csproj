@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\afterMigration\" />
+    <Folder Include="Migrations\alterDatabase\" />
+    <Folder Include="Migrations\beforeMigration\" />
+    <Folder Include="Migrations\functions\" />
+    <Folder Include="Migrations\indexes\" />
+    <Folder Include="Migrations\permissions\" />
+    <Folder Include="Migrations\runAfterOtherAnyTimeScripts\" />
+    <Folder Include="Migrations\runFirstAfterUp\" />
+    <Folder Include="Migrations\triggers\" />
+    <Folder Include="Migrations\views\" />
+  </ItemGroup>
+
+</Project>
