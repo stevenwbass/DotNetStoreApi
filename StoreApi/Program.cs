@@ -20,14 +20,14 @@ builder.Services.RegisterDependencies(builder.Configuration);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
    app.UseSwagger();
    app.UseSwaggerUI(c =>
    {
       c.SwaggerEndpoint("/swagger/v1/swagger.json", "Store API V1");
    });
-}
+// }
 
 app.MapControllers();
 
