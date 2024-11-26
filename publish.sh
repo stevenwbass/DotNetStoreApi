@@ -1,6 +1,6 @@
 docker login docker.io
 
-dotnet publish
+dotnet publish --self-contained -r linux-arm64
 
 cd ./StoreApi
 

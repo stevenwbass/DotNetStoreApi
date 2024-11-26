@@ -1,0 +1,1 @@
+#!/bin/bashservice nginx startdotnet /Docker/StoreApi.dll

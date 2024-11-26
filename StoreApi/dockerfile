@@ -1,5 +1,18 @@
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:6c4df091e4e531bb93bdbfe7e7f0998e7ced344f54426b7e874116a3dc3233ff
+
+RUN apt-get update
+RUN apt-get install -y nginx
+
 WORKDIR /Docker
 COPY /bin/Release/net8.0/linux-arm64 .
-ENTRYPOINT ["dotnet", "StoreApi.dll"]
+COPY ./startup.sh .
+RUN chmod 755 /Docker/startup.sh
+
+RUN rm /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx
+
+ENV ASPNETCORE_URLS https://+:5000
+EXPOSE 5000 80
+ 
+CMD ["sh", "/Docker/startup.sh"]
